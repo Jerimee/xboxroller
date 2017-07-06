@@ -1,14 +1,14 @@
 #N canvas 49 50 1438 929 10;
 #X obj 35 154 hidin;
-#X msg 19 135 open 1;
+#X msg 58 135 open 1;
 #X msg 46 193 4 33006;
-#X msg 73 135 start;
+#X msg 8 135 start;
 #X obj 44 172 cyclone/prepend set;
 #X obj 38 211 route 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16;
 #X obj 158 268 hsl 100 15 -67000 100 0 1 myroll empty empty 10 -12
 0 10 -203904 -1 -159808 5051 0;
-#X floatatom 22 277 7 0 0 2 two - lstwo, f 7;
-#X floatatom 23 251 7 0 0 2 one - lsone, f 7;
+#X floatatom 22 277 7 0 0 2 lstickx(2) - lstwo, f 7;
+#X floatatom 23 251 7 0 0 2 lsticky(1) - lsone, f 7;
 #X floatatom 22 331 7 0 0 2 four - -, f 7;
 #X floatatom 23 305 7 0 0 2 three - -, f 7;
 #X floatatom 21 386 7 0 0 2 dpad(6) - -, f 7;
@@ -24,7 +24,7 @@
 #X floatatom 373 446 7 0 0 2 rstckdown(16) - -, f 7;
 #X floatatom 374 420 7 0 0 2 lstckdown(15) - -, f 7;
 #X floatatom 339 211 5 0 0 3 rjct - -, f 5;
-#X obj 57 117 delay 100;
+#X obj 64 116 delay 100;
 #X obj 460 264 dac~;
 #X msg 492 189 0;
 #X obj 451 206 *~;
@@ -49,7 +49,7 @@
 #X obj 95 153 phasor~;
 #X obj 211 85 osc~;
 #X obj 322 48 hsl 150 15 0.1 1 0 1 empty wobblerat empty -2 -8 0 10
--262130 -1 -1 8536 1;
+-262130 -1 -1 0 1;
 #X floatatom 309 96 5 0 0 0 - - -, f 5;
 #X floatatom 356 96 5 0 0 0 - - -, f 5;
 #X obj 352 209 f 1;
@@ -66,7 +66,7 @@
 #X obj 460 293 s wobblerat;
 #X floatatom 412 274 5 0 0 0 - - -, f 5;
 #X obj 317 319 hsl 350 8 -1 3 0 1 empty empty empty -2 -8 0 10 -262144
--1 -1 14096 1;
+-1 -1 8852 1;
 #X obj 350 228 expr $f1 \; (sin($f1) / 2.8) + 0.37;
 #X obj 499 178 abs;
 #X msg 509 221 set \$1;
@@ -92,7 +92,7 @@
 #X obj 20 308 * 200;
 #X obj 21 326 + 450;
 #X obj 286 108 tgl 15 0 empty empty empty 17 7 0 10 -125227 -262144
--1 0 1;
+-1 1 1;
 #X obj 202 377 s~ fuzz;
 #X obj 107 280 r~ fuzz;
 #X obj 357 78 expr (1-$f1)-0.1;
@@ -253,11 +253,11 @@
 #X connect 19 0 14 0;
 #X connect 20 0 19 0;
 #X connect 21 0 1 0;
-#X restore 210 173 pd blue-play;
+#X restore 296 175 pd blue-play;
 #X obj 5 4 tgl 50 0 fakeloadbang empty empty 17 7 0 10 -4034 -257985
 -1 1 1;
 #X msg 4 58 \; pd dsp \$1;
-#X obj 207 152 r blue;
+#X obj 293 154 r blue;
 #N canvas 575 143 1004 734 five-value 0;
 #X obj 24 40 * -1;
 #X obj 13 65 outlet;
@@ -310,10 +310,14 @@ low make line so amp changes happen over time;
 #X restore 220 327 pd five-ampcalc;
 #X floatatom 231 288 8 0 0 0 - - -, f 8;
 #X obj 466 100 r fakeloadbang;
-#X obj 184 40 r triggrnot;
-#X floatatom 194 67 5 0 0 0 - - -, f 5;
+#X obj 458 38 r triggrnot;
+#X floatatom 468 65 5 0 0 0 - - -, f 5;
 #X msg 465 131 0.8;
 #X obj 461 243 clip~ -1 1;
+#X text 63 23 <-- push to start;
+#X text 134 121 you need to know the device number of your xbox pad
+\, also \, you need an xpod pad;
+#X text 110 134 <--;
 #X connect 0 0 4 0;
 #X connect 0 0 5 0;
 #X connect 1 0 0 0;
