@@ -1,16 +1,16 @@
-#N canvas 915 50 897 1004 10;
+#N canvas 725 101 897 827 10;
 #X obj 40 53 hidin;
 #X msg 108 35 open 1;
 #X text 154 35 <-- assuming your device id is one;
-#N canvas 0 50 897 1004 gamepadrouter 0;
+#N canvas 0 50 897 1004 gamepadrouter 1;
 #X obj 25 19 route 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16;
 #X text 24 33 1 2 3 4 5 6 7 8 9 10 11 12 1314 15 16 reject;
-#X floatatom 9 85 7 0 0 2 two - -, f 7;
-#X floatatom 10 59 7 0 0 2 one - -, f 7;
+#X floatatom 9 85 7 0 0 2 two - lsx2, f 7;
+#X floatatom 10 59 7 0 0 2 one - lsy1, f 7;
 #X floatatom 9 139 7 0 0 2 four - rsx4, f 7;
 #X floatatom 10 113 7 0 0 2 three - rsy3, f 7;
 #X floatatom 8 194 7 0 0 2 dpad(6) - dpad, f 7;
-#X floatatom 9 168 7 0 0 2 five - -, f 7;
+#X floatatom 9 168 7 0 0 2 triggers(5) - triggers, f 7;
 #X floatatom 8 248 7 0 0 2 redB(8) - red, f 7;
 #X floatatom 9 222 7 0 0 2 greenA(7) - green, f 7;
 #X floatatom 380 91 7 0 0 2 yellowY(10) - yellow, f 7;
@@ -20,7 +20,7 @@
 #X floatatom 380 200 7 0 0 2 start(14) - startbtn, f 7;
 #X floatatom 381 174 7 0 0 2 back(13) - backbtn, f 7;
 #X floatatom 380 254 7 0 0 2 rstkdown(16) - rstkdown, f 7;
-#X floatatom 381 228 7 0 0 2 fifteen - -, f 7;
+#X floatatom 381 228 2 0 0 2 lstkdown(15) - lstkdown, f 2;
 #X text 55 191 0-8 up is 1 and then clockwise to 8 \, zero is no input
 ;
 #X floatatom 326 19 10 0 0 1 reject - -, f 10;
@@ -151,19 +151,19 @@
 #X connect 43 1 44 0;
 #X connect 45 1 42 0;
 #X restore 40 71 pd gamepadrouter;
-#X obj 343 207 cnv 5 40 40 empty rdrcv rd 20 12 0 14 -258699 -233017
+#X obj 343 232 cnv 5 40 40 empty rdrcv rd 20 12 0 14 -258699 -233017
 0;
-#X obj 299 164 cnv 5 40 40 empty yelrcv yel 20 12 0 14 -241291 -233017
+#X obj 299 189 cnv 5 40 40 empty yelrcv yel 20 12 0 14 -241291 -233017
 0;
-#X obj 299 251 cnv 5 40 40 empty grnrcv grn 20 12 0 14 -24198 -233017
+#X obj 299 276 cnv 5 40 40 empty grnrcv grn 20 12 0 14 -24198 -233017
 0;
-#X obj 255 207 cnv 5 40 40 empty blurcv blu 20 12 0 14 -44926 -233017
+#X obj 255 232 cnv 5 40 40 empty blurcv blu 20 12 0 14 -44926 -233017
 0;
 #X msg 40 35 start;
 #X obj 40 17 loadbang;
-#X obj 139 166 cnv 7 30 15 empty bckrcv bck 12 6 0 14 -233017 -66577
+#X obj 139 191 cnv 7 30 15 empty bckrcv bck 12 6 0 14 -233017 -66577
 0;
-#X obj 239 166 cnv 7 30 15 empty mnurcv mnu 12 6 0 14 -233017 -66577
+#X obj 239 191 cnv 7 30 15 empty mnurcv mnu 12 6 0 14 -233017 -66577
 0;
 #N canvas 675 249 947 488 rtbbtn 0;
 #X obj 2 2 cnv 7 73 23 empty rtbrcv rtb 5 8 0 16 -42246 -262144 0;
@@ -178,7 +178,7 @@
 #X connect 1 0 2 0;
 #X connect 1 0 5 0;
 #X coords 0 -100 100 100 75 25 2 1 1;
-#X restore 282 121 pd rtbbtn;
+#X restore 282 146 pd rtbbtn;
 #N canvas 907 188 862 642 lfbbtn 0;
 #X obj 2 2 cnv 7 73 23 empty lfbrcv lfb 4 8 0 16 -42246 -262144 0;
 #X obj 116 10 loadbang;
@@ -190,7 +190,7 @@
 #X connect 1 0 3 0;
 #X connect 1 0 4 0;
 #X coords 0 -100 100 100 75 25 2 1 1;
-#X restore 59 119 pd lfbbtn;
+#X restore 59 144 pd lfbbtn;
 #N canvas 915 50 897 1004 dpadcanvas 0;
 #X floatatom 61 62 2 0 0 0 dpad dpad -, f 2;
 #X obj 12 6 cnv 12 16 16 empty a18 8 7 7 0 12 -262144 -66577 0;
@@ -244,8 +244,8 @@ color 5 \; b20 color 0 \; b33 color 0 \; c16 color 0 \; c25 color 0
 #X connect 11 8 20 0;
 #X connect 11 9 12 0;
 #X coords 0 -1 1 1 75 75 2 1 1;
-#X restore 115 262 pd dpadcanvas;
-#N canvas 286 145 897 1004 rstick 1;
+#X restore 119 287 pd dpadcanvas;
+#N canvas 286 145 897 1004 rstick 0;
 #X obj 44 46 cnv 2 5 5 empty rstk empty 20 12 0 14 -260818 -66577 0
 ;
 #X obj 200 35 loadbang;
@@ -281,7 +281,87 @@ color 5 \; b20 color 0 \; b33 color 0 \; c16 color 0 \; c25 color 0
 #X connect 19 0 17 0;
 #X connect 19 1 18 0;
 #X coords 0 0 65535 65535 90 90 2 1 1;
-#X restore 201 262 pd rstick;
+#X restore 201 287 pd rstick;
+#N canvas 344 112 1007 796 lstick 0;
+#X obj 44 46 cnv 2 5 5 empty lstk empty 20 12 0 14 -260818 -66577 0
+;
+#X obj 200 35 loadbang;
+#X floatatom 75 76 2 0 0 0 lstkdown lstkdown -, f 2;
+#X floatatom 55 60 5 0 0 0 lsy1 lsy1 -, f 5;
+#X floatatom 55 45 5 0 0 0 lsx2 lsx2 -, f 5;
+#X obj 17 154 * 0.0027;
+#X obj 17 172 int;
+#X floatatom 17 189 5 0 0 0 - - -, f 5;
+#X obj 82 154 * 0.0027;
+#X obj 82 172 int;
+#X floatatom 82 189 5 0 0 0 - - -, f 5;
+#X obj 103 217 pack;
+#X floatatom 166 146 5 0 0 0 - - -, f 5;
+#X obj 163 113 expr $i1 \; if($i1==1 \, 16 \, 14) \;;
+#X text 96 1 left stick;
+#X msg 174 59 \; lstk pos 87 87;
+#X msg 226 196 \; lstk color \$1;
+#X msg 17 246 \; lstk pos \$1 \$2;
+#X obj 82 137 r lsy1;
+#X obj 17 137 r lsx2;
+#X connect 1 0 15 0;
+#X connect 2 0 13 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 11 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 1;
+#X connect 11 0 17 0;
+#X connect 13 0 12 0;
+#X connect 13 1 16 0;
+#X connect 18 0 8 0;
+#X connect 19 0 5 0;
+#X coords 0 0 65535 65535 90 90 2 1 1;
+#X restore 23 195 pd lstick;
+#N canvas 219 405 1241 497 trgrdisplay 1;
+#X obj 14 34 r triggers;
+#X obj 14 53 expr $i1 \; if($i1==32768 \, 1 \, 0);
+#X floatatom 66 150 5 0 0 0 - - -, f 5;
+#X floatatom 195 150 5 0 0 0 - - -, f 5;
+#X obj 168 2 cnv 7 15 22 empty trgrmid 32768 1 12 0 9 -250685 -262144
+0;
+#X msg 64 203 \; trgrmid color \$1;
+#X obj 65 168 expr $i1 \; if($i1==1 \, 19 \, 9) \;;
+#X obj 195 168 expr $i1 \; if($i1==1 \, 19 \, 9) \;;
+#X obj 2 2 cnv 7 15 22 empty trgrhigh 65408 1 12 0 9 -257472 -262144
+0;
+#X msg 194 203 \; trgrhigh color \$1;
+#X obj 14 85 expr $i1 \; $i2 \; if(($i2!=1)&($i1>=32768) \, 1 \, 0)
+\; if(($i2!=1)&($i1<=32768) \, 1 \, 0);
+#X floatatom 325 150 5 0 0 0 - - -, f 5;
+#X obj 325 168 expr $i1 \; if($i1==1 \, 19 \, 9) \;;
+#X msg 324 202 \; trgrlow color \$1;
+#X obj 334 2 cnv 7 15 22 empty trgrlow 128 1 12 0 9 -257472 -262144
+0;
+#X obj 174 1 cnv 1 2 24 empty trgrpos empty 20 12 0 14 -159808 -66577
+0;
+#X floatatom 237 7 5 0 0 0 - triggers -, f 5;
+#X msg 264 73 \; trgrpos pos \$1 3;
+#X floatatom 399 61 5 0 0 0 - - -, f 5;
+#X obj 265 38 expr $i1 \; 700-($i1*0.0107) \;;
+#X connect 0 0 1 0;
+#X connect 1 0 10 0;
+#X connect 1 1 10 1;
+#X connect 2 0 6 0;
+#X connect 3 0 7 0;
+#X connect 6 1 5 0;
+#X connect 7 1 9 0;
+#X connect 10 1 2 0;
+#X connect 10 2 3 0;
+#X connect 10 3 11 0;
+#X connect 11 0 12 0;
+#X connect 12 1 13 0;
+#X connect 16 0 19 0;
+#X connect 19 1 17 0;
+#X connect 19 1 18 0;
+#X coords 0 -1 65500 1 350 25 2 1 1;
+#X restore 35 112 pd trgrdisplay;
 #X connect 0 0 3 0;
 #X connect 1 0 0 0;
 #X connect 8 0 0 0;
