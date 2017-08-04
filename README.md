@@ -15,3 +15,5 @@ hidin: ** found 2 devices on your system
 2 Nintendo RVL-CNT-01
 
 And then since I know I want the Xbox Controller I pass an "open 1" message to hidin. Then the route object shows me the numbers for the input from controller.
+
+The "sounds" directory can be ignored.
