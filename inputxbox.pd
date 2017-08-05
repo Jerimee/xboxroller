@@ -1,7 +1,5 @@
 #N canvas 584 97 897 827 10;
 #X obj 40 53 hidin;
-#X msg 108 35 open 1;
-#X text 154 35 <-- assuming your device id is one;
 #N canvas 0 50 897 1004 gamepadrouter 0;
 #X obj 25 19 route 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16;
 #X text 24 33 1 2 3 4 5 6 7 8 9 10 11 12 1314 15 16 reject;
@@ -193,15 +191,15 @@
 #X restore 56 144 pd lfbbtn;
 #N canvas 593 50 1219 1004 dpadcanvas 0;
 #X floatatom 61 62 2 0 0 0 dpad dpad -, f 2;
-#X obj 15 17 cnv 12 13 13 empty a18 8 7 7 0 12 -262144 -66577 0;
-#X obj 30 17 cnv 12 13 13 empty a21 1 7 7 0 12 -262144 -66577 0;
-#X obj 45 17 cnv 12 13 13 empty a32 2 7 7 0 12 -262144 -66577 0;
-#X obj 15 32 cnv 12 13 13 empty b17 7 7 7 0 12 -262144 -66577 0;
-#X obj 30 32 cnv 12 13 13 empty b20 0 7 7 0 12 -262131 -66577 0;
-#X obj 45 32 cnv 12 13 13 empty b33 3 7 7 0 12 -262144 -66577 0;
-#X obj 15 47 cnv 12 13 13 empty c16 6 7 7 0 12 -262144 -66577 0;
-#X obj 30 47 cnv 12 13 13 empty c25 5 7 7 0 12 -262144 -66577 0;
-#X obj 45 47 cnv 12 13 13 empty c34 4 7 7 0 12 -262144 -66577 0;
+#X obj 30 35 cnv 12 13 13 empty a18 8 7 7 0 12 -262144 -66577 0;
+#X obj 60 35 cnv 12 13 13 empty a21 1 7 7 0 12 -262144 -66577 0;
+#X obj 90 35 cnv 12 13 13 empty a32 2 7 7 0 12 -262144 -66577 0;
+#X obj 30 65 cnv 12 13 13 empty b17 7 7 7 0 12 -262144 -66577 0;
+#X obj 60 65 cnv 12 13 13 empty b20 0 7 7 0 12 -262131 -66577 0;
+#X obj 90 65 cnv 12 13 13 empty b33 3 7 7 0 12 -262144 -66577 0;
+#X obj 30 95 cnv 12 13 13 empty c16 6 7 7 0 12 -262144 -66577 0;
+#X obj 60 95 cnv 12 13 13 empty c25 5 7 7 0 12 -262144 -66577 0;
+#X obj 90 95 cnv 12 13 13 empty c34 4 7 7 0 12 -262144 -66577 0;
 #X obj 144 8 r dpad;
 #X obj 144 49 route 0 1 2 3 4 5 6 7 8;
 #X obj 305 49 print dpaderror;
@@ -447,7 +445,7 @@ $i4 \;;
 #X coords 0 -1 1 1 75 75 2 1 1;
 #X restore 119 287 pd dpadcanvas;
 #N canvas 286 145 897 1004 rstick 0;
-#X obj 44 46 cnv 2 5 5 empty rstk empty 20 12 0 14 -260818 -66577 0
+#X obj 87 87 cnv 2 5 5 empty rstk empty 20 12 0 14 -260818 -66577 0
 ;
 #X obj 200 35 loadbang;
 #X text 97 1 right stick;
@@ -484,7 +482,7 @@ $i4 \;;
 #X coords 0 0 65535 65535 90 90 2 1 1;
 #X restore 201 287 pd rstick;
 #N canvas 344 112 1007 796 lstick 0;
-#X obj 44 46 cnv 2 5 5 empty lstk empty 20 12 0 14 -260818 -66577 0
+#X obj 87 87 cnv 2 5 5 empty lstk empty 20 12 0 14 -260818 -66577 0
 ;
 #X obj 200 35 loadbang;
 #X floatatom 75 76 2 0 0 0 lstkdown lstkdown -, f 2;
@@ -563,8 +561,13 @@ $i4 \;;
 #X connect 19 1 18 0;
 #X coords 0 -1 65500 1 350 25 2 1 1;
 #X restore 32 112 pd trgrdisplay;
-#X connect 0 0 3 0;
-#X connect 1 0 0 0;
-#X connect 8 0 0 0;
-#X connect 9 0 1 0;
-#X connect 9 0 8 0;
+#X msg 108 35 open 2;
+#X text 154 35 <-- assuming your device id is two \, if not sure "bang"
+hidin;
+#X msg 497 51 bang, f 7;
+#X connect 0 0 1 0;
+#X connect 6 0 0 0;
+#X connect 7 0 16 0;
+#X connect 7 0 6 0;
+#X connect 16 0 0 0;
+#X connect 18 0 0 0;

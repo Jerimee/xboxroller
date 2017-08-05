@@ -1,7 +1,7 @@
-#N canvas 442 22 1320 929 10;
+#N canvas 442 50 1320 929 10;
 #X obj 107 77 hidin;
 #X msg 19 51 open 1;
-#X msg 16 146 1 34524;
+#X msg 16 146 3 34288;
 #X msg 189 99 bang;
 #X msg 73 49 start;
 #X msg 116 49 stop;
@@ -18,7 +18,7 @@
 #X text 39 198 1 2 3 4 5 6 7 8 9 10 11 12 1314 15 16 reject;
 #X floatatom 109 224 5 0 0 2 five - -, f 5;
 #X obj 95 319 hsl 200 15 -65408 -128 0 0 myroll empty roll_(sending_myroll)
-10 -12 0 10 -203904 -1 -159808 19950 1;
+10 -12 0 10 -203904 -1 -159808 9950 1;
 #X obj 79 250 * -1;
 #X floatatom 88 278 12 0 0 0 - - -, f 12;
 #X floatatom 24 250 7 0 0 2 two - -, f 7;
@@ -83,6 +83,7 @@
 #X obj 527 141 f;
 #X obj 563 137 t b f;
 #X floatatom 531 122 5 0 0 0 - - -, f 5;
+#X msg 304 18 bang;
 #X connect 0 0 11 0;
 #X connect 0 0 13 0;
 #X connect 0 1 12 0;
@@ -158,3 +159,4 @@
 #X connect 74 0 73 0;
 #X connect 74 1 71 1;
 #X connect 75 0 73 0;
+#X connect 76 0 0 0;
