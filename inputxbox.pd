@@ -177,13 +177,13 @@
 #X connect 1 0 5 0;
 #X coords 0 -100 100 100 75 25 2 1 1;
 #X restore 279 146 pd rtbbtn;
-#N canvas 907 188 862 642 lfbbtn 0;
-#X obj 2 2 cnv 7 73 23 empty lfbrcv lfb 4 8 0 16 -42246 -262144 0;
+#N canvas 1030 278 862 642 lfbbtn 0;
+#X obj 2 2 cnv 7 73 23 empty lfbrcv lfb 2 6 0 10 -42246 -262144 0;
 #X obj 116 10 loadbang;
-#X floatatom 56 7 2 0 0 0 - lbumpbtn -, f 2;
+#X floatatom 57 3 2 0 0 0 - lbumpbtn -, f 2;
 #X msg 94 48 lfbrcv color 26;
-#X msg 199 48 lfbrcv vis_size 73 23;
-#X obj 21 18 cnv 5 32 6 empty empty lbumpbtn 2 2 0 10 -249661 -66577
+#X msg 267 48 lfbrcv vis_size 73 23;
+#X obj 1 18 cnv 5 45 8 empty empty lbumpbtn 2 3 0 8 -249661 -66577
 0;
 #X connect 1 0 3 0;
 #X connect 1 0 4 0;
@@ -445,7 +445,7 @@ $i4 \;;
 #X coords 0 -1 1 1 75 75 2 1 1;
 #X restore 119 287 pd dpadcanvas;
 #N canvas 286 145 897 1004 rstick 0;
-#X obj 87 87 cnv 2 5 5 empty rstk empty 20 12 0 14 -260818 -66577 0
+#X obj 89 93 cnv 2 5 5 empty rstk empty 20 12 0 14 -260818 -66577 0
 ;
 #X obj 200 35 loadbang;
 #X text 97 1 right stick;
@@ -482,7 +482,7 @@ $i4 \;;
 #X coords 0 0 65535 65535 90 90 2 1 1;
 #X restore 201 287 pd rstick;
 #N canvas 344 112 1007 796 lstick 0;
-#X obj 87 87 cnv 2 5 5 empty lstk empty 20 12 0 14 -260818 -66577 0
+#X obj 89 92 cnv 2 5 5 empty lstk empty 20 12 0 14 -260818 -66577 0
 ;
 #X obj 200 35 loadbang;
 #X floatatom 75 76 2 0 0 0 lstkdown lstkdown -, f 2;
@@ -538,12 +538,13 @@ $i4 \;;
 #X msg 324 202 \; trgrlow color \$1;
 #X obj 334 2 cnv 7 15 22 empty trgrlow 128 1 12 0 9 -257472 -262144
 0;
-#X obj 174 1 cnv 1 2 24 empty trgrpos empty 20 12 0 14 -159808 -66577
+#X obj 175 3 cnv 1 2 24 empty trgrpos empty 20 12 0 14 -159808 -66577
 0;
 #X floatatom 237 7 5 0 0 0 - triggers -, f 5;
 #X msg 264 73 \; trgrpos pos \$1 3;
 #X floatatom 399 61 5 0 0 0 - - -, f 5;
-#X obj 265 38 expr $i1 \; 700-($i1*0.0107) \;;
+#X floatatom 403 87 5 0 0 0 - - -, f 5;
+#X obj 266 38 expr $i1 \; 350-($i1*0.00534) \;;
 #X connect 0 0 1 0;
 #X connect 1 0 10 0;
 #X connect 1 1 10 1;
@@ -556,9 +557,10 @@ $i4 \;;
 #X connect 10 3 11 0;
 #X connect 11 0 12 0;
 #X connect 12 1 13 0;
-#X connect 16 0 19 0;
-#X connect 19 1 17 0;
-#X connect 19 1 18 0;
+#X connect 16 0 20 0;
+#X connect 20 0 19 0;
+#X connect 20 1 17 0;
+#X connect 20 1 18 0;
 #X coords 0 -1 65500 1 350 25 2 1 1;
 #X restore 32 112 pd trgrdisplay;
 #X msg 108 35 open 2;
