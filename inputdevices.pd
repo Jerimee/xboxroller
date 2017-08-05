@@ -40,9 +40,9 @@
 #X text 70 356 0-8 up is 1 and then clockwise to 8 \, zero is no input
 ;
 #X floatatom 341 184 10 0 0 1 reject - -, f 10;
-#X obj 396 27 receive green;
-#X obj 385 48 select 1;
-#X obj 385 70 bng 8 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 428 30 receive green;
+#X obj 417 51 select 1;
+#X obj 417 73 bng 8 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 4 13 bng 15 250 50 0 empty empty start 17 7 0 10 -4034 -1 -1
 ;
@@ -54,36 +54,37 @@
 #X obj 24 0 cnv 7 100 5 empty empty xboxroller 20 12 0 14 -233017 -66577
 0;
 #X obj 459 183 dac~;
-#X msg 525 79 0.15;
-#X msg 568 80 0;
-#X obj 494 45 bng 8 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X msg 557 82 0.15;
+#X msg 600 83 0;
+#X obj 526 48 bng 8 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 459 157 *~;
-#X obj 544 44 bng 8 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 491 160 *~;
+#X obj 576 47 bng 8 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 503 26 receive red;
-#X obj 490 215 receive myroll;
-#X obj 493 235 + 65000;
-#X floatatom 549 236 5 0 0 0 - - -, f 5;
-#X obj 494 256 / 65;
-#X obj 495 279 + 300;
-#X floatatom 548 279 5 0 0 0 - - -, f 5;
-#X obj 494 306 int;
-#X floatatom 527 306 5 0 0 0 - - -, f 5;
-#X obj 406 81 receive rollfrq;
-#X obj 406 127 osc~;
-#X obj 419 101 sig~;
-#X obj 516 328 / 4800;
-#X obj 456 396 send rollfrq;
-#X obj 516 360 send ampAdjust;
-#X floatatom 583 114 5 0 0 2 Adj ampAdjust -, f 5;
-#X obj 515 192 send myvol;
-#X obj 546 159 +;
-#X floatatom 499 175 5 0 0 0 - - -, f 5;
-#X obj 527 141 f;
-#X obj 563 137 t b f;
-#X floatatom 531 122 5 0 0 0 - - -, f 5;
+#X obj 535 29 receive red;
+#X obj 522 218 receive myroll;
+#X obj 525 238 + 65000;
+#X floatatom 581 239 5 0 0 0 - - -, f 5;
+#X obj 526 259 / 65;
+#X obj 527 282 + 300;
+#X floatatom 580 282 5 0 0 0 - - -, f 5;
+#X obj 526 309 int;
+#X floatatom 559 309 5 0 0 0 - - -, f 5;
+#X obj 438 84 receive rollfrq;
+#X obj 438 130 osc~;
+#X obj 451 104 sig~;
+#X obj 548 331 / 4800;
+#X obj 488 399 send rollfrq;
+#X obj 548 363 send ampAdjust;
+#X floatatom 615 117 5 0 0 2 Adj ampAdjust -, f 5;
+#X obj 547 195 send myvol;
+#X obj 578 162 +;
+#X floatatom 531 178 5 0 0 0 - - -, f 5;
+#X obj 559 144 f;
+#X obj 595 140 t b f;
+#X floatatom 563 125 5 0 0 0 - - -, f 5;
 #X msg 304 18 bang;
+#X text 326 0 if unsure what to do hit bang;
 #X connect 0 0 11 0;
 #X connect 0 0 13 0;
 #X connect 0 1 12 0;
