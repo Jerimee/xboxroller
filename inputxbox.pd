@@ -189,49 +189,48 @@
 #X connect 1 0 4 0;
 #X coords 0 -100 100 100 75 25 2 1 1;
 #X restore 56 144 pd lfbbtn;
-#N canvas 593 50 1219 1004 dpadcanvas 0;
-#X floatatom 61 62 2 0 0 0 dpad dpad -, f 2;
-#X obj 30 35 cnv 12 13 13 empty a18 8 7 7 0 12 -262144 -66577 0;
-#X obj 60 35 cnv 12 13 13 empty a21 1 7 7 0 12 -262144 -66577 0;
-#X obj 90 35 cnv 12 13 13 empty a32 2 7 7 0 12 -262144 -66577 0;
-#X obj 30 65 cnv 12 13 13 empty b17 7 7 7 0 12 -262144 -66577 0;
-#X obj 60 65 cnv 12 13 13 empty b20 0 7 7 0 12 -262131 -66577 0;
-#X obj 90 65 cnv 12 13 13 empty b33 3 7 7 0 12 -262144 -66577 0;
-#X obj 30 95 cnv 12 13 13 empty c16 6 7 7 0 12 -262144 -66577 0;
-#X obj 60 95 cnv 12 13 13 empty c25 5 7 7 0 12 -262144 -66577 0;
-#X obj 90 95 cnv 12 13 13 empty c34 4 7 7 0 12 -262144 -66577 0;
+#N canvas 590 166 1219 1004 dpadcanvas 0;
+#X floatatom 56 28 2 0 0 0 - dpad -, f 2;
+#X obj 3 6 cnv 12 10 10 empty a18 8 7 7 0 12 -262144 -66577 0;
+#X obj 18 6 cnv 12 10 10 empty a21 1 7 7 0 12 -262144 -66577 0;
+#X obj 33 6 cnv 12 10 10 empty a32 2 7 7 0 12 -262144 -66577 0;
+#X obj 3 21 cnv 12 10 10 empty b17 7 7 7 0 12 -262144 -66577 0;
+#X obj 18 21 cnv 12 10 10 empty b20 0 7 7 0 12 -262131 -66577 0;
+#X obj 33 21 cnv 12 10 10 empty b33 3 7 7 0 12 -262144 -66577 0;
+#X obj 3 36 cnv 12 10 10 empty c16 6 7 7 0 12 -262144 -66577 0;
+#X obj 18 36 cnv 12 10 10 empty c25 5 7 7 0 12 -262144 -66577 0;
+#X obj 33 36 cnv 12 10 10 empty c34 4 7 7 0 12 -262144 -66577 0;
 #X obj 144 8 r dpad;
 #X obj 144 49 route 0 1 2 3 4 5 6 7 8;
 #X obj 305 49 print dpaderror;
 #X msg 61 104 \; a18 color 0 \; a21 color 0 \; a32 color 0 \; b17 color
 0 \; b20 color 5 \; b33 color 0 \; c16 color 0 \; c25 color 0 \; c34
 color 0 \;;
-#X msg 16 236 \; a18 color 0 \; a21 color 5 \; a32 color 0 \; b17 color
+#X msg 16 243 \; a18 color 0 \; a21 color 5 \; a32 color 0 \; b17 color
 0 \; b20 color 0 \; b33 color 0 \; c16 color 0 \; c25 color 0 \; c34
 color 0 \;;
 #X msg 146 104 \; a18 color 0 \; a21 color 0 \; a32 color 5 \; b17
 color 0 \; b20 color 0 \; b33 color 0 \; c16 color 0 \; c25 color 0
 \; c34 color 0 \;;
-#X msg 101 236 \; a18 color 0 \; a21 color 0 \; a32 color 0 \; b17
+#X msg 101 243 \; a18 color 0 \; a21 color 0 \; a32 color 0 \; b17
 color 0 \; b20 color 0 \; b33 color 5 \; c16 color 0 \; c25 color 0
 \; c34 color 0 \;;
 #X msg 231 104 \; a18 color 0 \; a21 color 0 \; a32 color 0 \; b17
 color 0 \; b20 color 0 \; b33 color 0 \; c16 color 0 \; c25 color 0
 \; c34 color 5 \;;
-#X msg 186 236 \; a18 color 0 \; a21 color 0 \; a32 color 0 \; b17
+#X msg 186 243 \; a18 color 0 \; a21 color 0 \; a32 color 0 \; b17
 color 0 \; b20 color 0 \; b33 color 0 \; c16 color 0 \; c25 color 5
 \; c34 color 0 \;;
 #X msg 316 104 \; a18 color 0 \; a21 color 0 \; a32 color 0 \; b17
 color 0 \; b20 color 0 \; b33 color 0 \; c16 color 5 \; c25 color 0
 \; c34 color 0 \;;
-#X msg 356 236 \; a18 color 5 \; a21 color 0 \; a32 color 0 \; b17
+#X msg 356 243 \; a18 color 5 \; a21 color 0 \; a32 color 0 \; b17
 color 0 \; b20 color 0 \; b33 color 0 \; c16 color 0 \; c25 color 0
 \; c34 color 0 \;;
-#X msg 272 236 \; a18 color 0 \; a21 color 0 \; a32 color 0 \; b17
+#X msg 272 243 \; a18 color 0 \; a21 color 0 \; a32 color 0 \; b17
 color 5 \; b20 color 0 \; b33 color 0 \; c16 color 0 \; c25 color 0
 \; c34 color 0 \;;
-#X text 16 166 zero->;
-#X floatatom 3 62 2 0 0 0 - lastnum -, f 2;
+#X floatatom 56 9 2 0 0 0 - lastnum -, f 2;
 #X msg 137 70 1;
 #X floatatom 350 88 3 0 0 0 - - lastnum, f 3;
 #X msg 165 70 2;
@@ -242,16 +241,8 @@ color 5 \; b20 color 0 \; b33 color 0 \; c16 color 0 \; c25 color 0
 #X msg 290 70 7;
 #X msg 315 70 8;
 #X obj 446 23 loadbang;
-#X floatatom 451 68 5 0 0 0 - - -, f 5;
-#X msg 449 44 13;
-#X floatatom 54 3 3 0 0 0 y - -, f 3;
-#X floatatom 2 3 3 0 0 1 x - -, f 3;
-#X msg 453 98 \; a18 pos 30 35 \; a21 pos 60 35 \; a32 pos 90 35 \;
-b17 pos 30 65 \; b20 pos 60 65 \; b33 pos 90 65 \; c16 pos 30 95 \;
-c25 pos 60 95 \; c34 pos 90 95 \; a18 vis_size \$1 \$1 \; a21 vis_size
-\$1 \$1 \; a32 vis_size \$1 \$1 \; b17 vis_size \$1 \$1 \; b20 vis_size
-\$1 \$1 \; b33 vis_size \$1 \$1 \; c16 vis_size \$1 \$1 \; c25 vis_size
-\$1 \$1 \; c34 vis_size \$1 \$1 \;;
+#X floatatom 51 59 3 0 0 0 y - -, f 3;
+#X floatatom 14 59 3 0 0 0 x - -, f 3;
 #N canvas 623 50 1103 965 retainxy 0;
 #X obj 9 19 inlet;
 #X floatatom 368 50 5 100 999 0 - - yvar, f 5;
@@ -409,43 +400,51 @@ $i4 \;;
 #X connect 74 4 66 0;
 #X connect 74 5 70 0;
 #X restore 189 28 pd retainxy;
+#X msg 483 147 \; a18 pos \$5 \$2 \; a21 pos \$6 \$2 \; a32 pos \$7
+\$2 \; b17 pos \$5 \$3 \; b20 pos \$6 \$3 \; b33 pos \$7 \$3 \; c16
+pos \$5 \$4 \; c25 pos \$6 \$4 \; c34 pos \$7 \$4 \; a18 vis_size \$1
+\$1 \; a21 vis_size \$1 \$1 \; a32 vis_size \$1 \$1 \; b17 vis_size
+\$1 \$1 \; b20 vis_size \$1 \$1 \; b33 vis_size \$1 \$1 \; c16 vis_size
+\$1 \$1 \; c25 vis_size \$1 \$1 \; c34 vis_size \$1 \$1 \;;
+#X obj 3 55 cnv 2 71 2 empty empty empty 20 12 0 14 -86853 -66577 0
+;
+#X msg 449 44 10 6 21 36 3 18 33;
 #X connect 10 0 11 0;
-#X connect 10 0 39 0;
+#X connect 10 0 35 0;
 #X connect 11 0 13 0;
-#X connect 11 1 24 0;
-#X connect 11 2 26 0;
-#X connect 11 3 27 0;
-#X connect 11 4 28 0;
-#X connect 11 5 29 0;
-#X connect 11 6 30 0;
-#X connect 11 7 31 0;
-#X connect 11 8 32 0;
+#X connect 11 1 23 0;
+#X connect 11 2 25 0;
+#X connect 11 3 26 0;
+#X connect 11 4 27 0;
+#X connect 11 5 28 0;
+#X connect 11 6 29 0;
+#X connect 11 7 30 0;
+#X connect 11 8 31 0;
 #X connect 11 9 12 0;
-#X connect 24 0 14 0;
-#X connect 24 0 25 0;
-#X connect 26 0 15 0;
-#X connect 26 0 25 0;
-#X connect 27 0 16 0;
-#X connect 27 0 25 0;
-#X connect 28 0 17 0;
-#X connect 28 0 25 0;
-#X connect 29 0 18 0;
-#X connect 29 0 25 0;
-#X connect 30 0 19 0;
-#X connect 30 0 25 0;
-#X connect 31 0 21 0;
-#X connect 31 0 25 0;
-#X connect 32 0 20 0;
-#X connect 32 0 25 0;
-#X connect 33 0 35 0;
-#X connect 34 0 38 0;
+#X connect 23 0 14 0;
+#X connect 23 0 24 0;
+#X connect 25 0 15 0;
+#X connect 25 0 24 0;
+#X connect 26 0 16 0;
+#X connect 26 0 24 0;
+#X connect 27 0 17 0;
+#X connect 27 0 24 0;
+#X connect 28 0 18 0;
+#X connect 28 0 24 0;
+#X connect 29 0 19 0;
+#X connect 29 0 24 0;
+#X connect 30 0 21 0;
+#X connect 30 0 24 0;
+#X connect 31 0 20 0;
+#X connect 31 0 24 0;
+#X connect 32 0 38 0;
 #X connect 35 0 34 0;
-#X connect 39 0 37 0;
-#X connect 39 1 36 0;
+#X connect 35 1 33 0;
+#X connect 38 0 36 0;
 #X coords 0 -1 1 1 75 75 2 1 1;
-#X restore 119 287 pd dpadcanvas;
+#X restore 104 295 pd dpadcanvas;
 #N canvas 286 145 897 1004 rstick 0;
-#X obj 89 93 cnv 2 5 5 empty rstk empty 20 12 0 14 -260818 -66577 0
+#X obj 43 44 cnv 2 5 5 empty rstk empty 20 12 0 14 -260818 -66577 0
 ;
 #X obj 200 35 loadbang;
 #X text 97 1 right stick;
@@ -453,11 +452,9 @@ $i4 \;;
 #X floatatom 55 60 5 0 0 0 rsy3 rsy3 -, f 5;
 #X floatatom 55 45 5 0 0 0 rsx4 rsx4 -, f 5;
 #X msg 174 59 \; rstk pos 87 87;
-#X obj 17 154 * 0.0027;
 #X obj 17 172 int;
 #X floatatom 17 189 5 0 0 0 - - -, f 5;
 #X obj 17 137 r rsx4;
-#X obj 82 154 * 0.0027;
 #X obj 82 172 int;
 #X floatatom 82 189 5 0 0 0 - - -, f 5;
 #X obj 82 137 r rsy3;
@@ -466,19 +463,21 @@ $i4 \;;
 #X floatatom 166 146 5 0 0 0 - - -, f 5;
 #X msg 226 196 \; rstk color \$1;
 #X obj 163 113 expr $i1 \; if($i1==1 \, 16 \, 14) \;;
+#X obj 82 154 * 0.0013;
+#X obj 17 154 * 0.0013;
 #X connect 1 0 6 0;
-#X connect 3 0 19 0;
+#X connect 3 0 17 0;
 #X connect 7 0 8 0;
-#X connect 8 0 9 0;
-#X connect 9 0 15 0;
-#X connect 10 0 7 0;
-#X connect 11 0 12 0;
-#X connect 12 0 13 0;
-#X connect 13 0 15 1;
-#X connect 14 0 11 0;
-#X connect 15 0 16 0;
-#X connect 19 0 17 0;
-#X connect 19 1 18 0;
+#X connect 8 0 13 0;
+#X connect 9 0 19 0;
+#X connect 10 0 11 0;
+#X connect 11 0 13 1;
+#X connect 12 0 18 0;
+#X connect 13 0 14 0;
+#X connect 17 0 15 0;
+#X connect 17 1 16 0;
+#X connect 18 0 10 0;
+#X connect 19 0 7 0;
 #X coords 0 0 65535 65535 90 90 2 1 1;
 #X restore 201 287 pd rstick;
 #N canvas 344 112 1007 796 lstick 0;
