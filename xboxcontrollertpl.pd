@@ -520,12 +520,12 @@ pos \$5 \$4 \; c25 pos \$6 \$4 \; c34 pos \$7 \$4 \; a18 vis_size \$1
 #X obj 14 53 expr $i1 \; if($i1==32768 \, 1 \, 0);
 #X floatatom 66 150 5 0 0 0 - - -, f 5;
 #X floatatom 195 150 5 0 0 0 - - -, f 5;
-#X obj 168 2 cnv 7 15 22 empty trgrmid 32768 1 12 0 9 -250685 -262144
+#X obj 168 2 cnv 7 15 22 empty trgrmid 32768 1 12 0 9 -257472 -262144
 0;
 #X msg 64 203 \; trgrmid color \$1;
 #X obj 65 168 expr $i1 \; if($i1==1 \, 19 \, 9) \;;
 #X obj 195 168 expr $i1 \; if($i1==1 \, 19 \, 9) \;;
-#X obj 2 2 cnv 7 15 22 empty trgrhigh 65408 1 12 0 9 -257472 -262144
+#X obj 2 2 cnv 7 15 22 empty trgrhigh 65408 1 12 0 9 -250685 -262144
 0;
 #X msg 194 203 \; trgrhigh color \$1;
 #X obj 14 85 expr $i1 \; $i2 \; if(($i2!=1)&($i1>=32768) \, 1 \, 0)
@@ -535,7 +535,7 @@ pos \$5 \$4 \; c25 pos \$6 \$4 \; c34 pos \$7 \$4 \; a18 vis_size \$1
 #X msg 324 202 \; trgrlow color \$1;
 #X obj 334 2 cnv 7 15 22 empty trgrlow 128 1 12 0 9 -257472 -262144
 0;
-#X obj 175 3 cnv 1 2 24 empty trgrpos empty 20 12 0 14 -159808 -66577
+#X obj 165 3 cnv 1 2 24 empty trgrpos empty 20 12 0 14 -159808 -66577
 0;
 #X floatatom 237 7 5 0 0 0 - triggers -, f 5;
 #X msg 264 73 \; trgrpos pos \$1 3;
@@ -618,10 +618,10 @@ hidin;
 #X restore 420 263 pd chancontrol;
 #X text 98 431 VARLIST:;
 #X text 505 195 <-- put code here;
-#X text 112 459 blue yellow red green lbumpbtn rbumpbtn backbtn menubtn
-etc;
 #X text 98 501 TODO:;
 #X text 112 529 add dsp on on load;
+#X text 112 459 blue yellow red green lbumpbtn rbumpbtn backbtn menubtn
+lastnum etc;
 #X connect 0 0 1 0;
 #X connect 2 0 0 0;
 #X connect 3 0 12 0;
